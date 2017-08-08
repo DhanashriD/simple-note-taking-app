@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Note taking App</title>
+    <link rel="stylesheet" type="text/css" href="note-taking-app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="note-taking-app.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Create a Note</h3>
+            <button id="add" onClick="showform()">Create Note</button>
+            <form id="notesForm" action="" onsubmit="return false;">
+                <p id="warning">* Please Enter Title and Description</p>
+                <br> Title:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                <input type="text" id="title"></input>
+                <br> Description:<br>
+                <textarea id="description"></textarea>
+                <br> Pick a color:
+                <input type="color" name="favcolor" value="#ffe4c4" id="colorPicker">
+                <br>
+                <div id="formAction">
+                    <input type="submit" value="Submit" onClick="addNote()">
+                    <input id="cancel" type="button" value="Cancel" onClick="closeform()">
+                </div>
+            </form>
+            <table id="notesTable" align="center">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </table>
+            <br>
+
+            <button id="makeStickyNote" onClick="createStickyNote()">Save/Refresh Notes</button>
+            <ul class="stickyNotes"></ul>
+    </div>
+</body>
+
+</html>
